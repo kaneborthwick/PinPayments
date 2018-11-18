@@ -1,0 +1,18 @@
+{
+    "name": "towersystems/pinpayments",
+    "type": "library",
+    "description": "Handle Communication with Pinpayments",
+    "authors": [
+        {
+            "name": "kane",
+            "email": "kane.borthwick@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.0",
+    },
+    "autoload": {
+        "psr-4": { "Towersystems\\Pinpayments\\": "" }
+    }
+}
