@@ -16,8 +16,5 @@
     },
     "autoload": {
         "psr-4": { "Towersystems\\PinPayments\\": "" }
-    },
-     "branch-alias": {
-            "dev-master": "1.0.0.x-dev"
     }
 }
