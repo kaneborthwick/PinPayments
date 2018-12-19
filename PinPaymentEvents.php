@@ -15,6 +15,10 @@ final class PinPaymentEvents {
 	const EVENT_SUBSCRIPTION_CREATED = "subscription.created";
 	const EVENT_SUBSCRIPTION_UNSUBSCRIBED = "subscription.unsubscribed";
 
+	const EVENT_REFUND_CREATED = "refund.created";
+    const EVENT_REFUND_SUCCEED = "refund.succeeded";
+    const EVENT_REFUND_FAILED = "refund.failed";
+
 	private function __construct() {}
 
 }
