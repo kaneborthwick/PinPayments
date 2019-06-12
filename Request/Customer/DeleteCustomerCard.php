@@ -30,11 +30,11 @@ class DeleteCustomerCard extends Request {
 		$response = $this->gateway->execute($request);
 
 		if (false === $response->isSuccess()) {
-			$error = json_decode($response->getContent());
-			throw new InvalidRequestException($error->error_description, $error->messages, $error->error);
+			$error = json_decode($response->getBody());
+			throw new InvalidRequestException($error->error_description, $error->error_description, $error->error);
 		}
 
-		$response = json_decode($response->getContent(), true)['response'];
+		$response = json_decode($response->getBody(), true)['response'];
 
 		return $response;
 	}
@@ -56,6 +56,5 @@ class DeleteCustomerCard extends Request {
 	public function setCardToken(string $token): void{
 		$this->cardToken = $token;
 	}
-
 
 }

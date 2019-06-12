@@ -23,10 +23,10 @@ class CreateSubscription extends Request {
 		$response = $this->gateway->execute($request);
 
 		if (false === $response->isSuccess()) {
-			throw new \Exception($response->getContent(), 1);
+			throw new \Exception($response->getBody(), 1);
 		}
 
-		$response = json_decode($response->getContent(), true)['response'];
+		$response = json_decode($response->getBody(), true)['response'];
 
 		return $response;
 	}

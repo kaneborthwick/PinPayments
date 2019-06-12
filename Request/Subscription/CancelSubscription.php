@@ -26,10 +26,10 @@ class CancelSubscription extends Request {
 		$response = $this->gateway->execute($request);
 
 		if (false === $response->isSuccess()) {
-			throw new \Exception($response->getContent()['error_description'], 1);
+			throw new \Exception($response->getBody()['error_description'], 1);
 		}
 
-		$response = json_decode($response->getContent(), true)['response'];
+		$response = json_decode($response->getBody(), true)['response'];
 
 		return $response;
 	}

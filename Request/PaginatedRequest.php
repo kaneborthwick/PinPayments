@@ -20,7 +20,7 @@ abstract class PaginatedRequest extends Request {
 		$pagination = $this->parsePaginationFromResponse($response);
 		$totalPages = ceil($pagination['count'] / $pagination['per_page']);
 
-		$items = json_decode($response->getContent(), true)['response'];
+		$items = json_decode($response->getBody(), true)['response'];
 
 		if ($totalPages > 1) {
 			$cP = 1;
@@ -33,7 +33,7 @@ abstract class PaginatedRequest extends Request {
 				if (false === $response->isSuccess()) {
 					throw new \Exception("Failed to execute request", 1);
 				}
-				$items = array_merge($items, json_decode($response->getContent(), true)['response']);
+				$items = array_merge($items, json_decode($response->getBody(), true)['response']);
 
 			}
 		}
@@ -53,7 +53,7 @@ abstract class PaginatedRequest extends Request {
 			throw new \Exception("Failed to execute request", 1);
 		}
 
-		return json_decode($response->getContent(), true)['pagination'];
+		return json_decode($response->getBody(), true)['pagination'];
 	}
 
 }
